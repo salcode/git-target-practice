@@ -68,5 +68,18 @@ const branches = {
   'feat/numbers': '9357424',
 };
 
+/**
+ * Convert target string to array of commits
+ *
+ * @param {string} Target string (e.g. "8e0449d" or "head")
+ * @return {string[]} Array of commit hashes.
+ */
+const targetStrToCommits = (targetStr) => {
+  if (branches[targetStr]) {
+    return [ branches[targetStr] ];
+  }
+  return [targetStr];
+}
+
 function update() {
 }
