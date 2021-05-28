@@ -67,3 +67,6 @@ const branches = {
   'main': 'fe7bb64',
   'feat/numbers': '9357424',
 };
+
+function update() {
+}
