@@ -96,6 +96,17 @@ const targetStrToSelector = (targetStr) => {
 };
 
 /**
+ * Clear highlighting on all commits.
+ *
+ * @return void
+ */
+function clearHighlights() {
+  document.querySelectorAll('.targeted').forEach(
+    (domObj) => domObj.classList.remove('targeted')
+  );
+}
+
+/**
  * Add the .targeted class to the commits indiciated by the targetStr
  *
  * @param {string} targetStr The target string (e.g. "8e0449d" or "head")
@@ -113,6 +124,7 @@ function highlightCommits(targetStr) {
 }
 
 function update() {
+  clearHighlights();
   highlightCommits(
     document.getElementById('git-target').value.toLowerCase()
   );
