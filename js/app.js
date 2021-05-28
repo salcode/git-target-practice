@@ -83,3 +83,26 @@ const targetStrToCommits = (targetStr) => {
 
 function update() {
 }
+
+function testTargetStrToCommits() {
+  const data = [
+    {
+      input: 'head',
+      expected: ['fe7bb64'],
+    },
+    {
+      input: 'feat/numbers',
+      expected: ['9357424'],
+    },
+  ];
+
+  data.forEach(
+    ({input, expected}) => {
+      console.assert(
+        expected.join()
+        ===
+        targetStrToCommits(input).join()
+      );
+    }
+  );
+}
