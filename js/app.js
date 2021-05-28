@@ -95,7 +95,27 @@ const targetStrToSelector = (targetStr) => {
   ).join(',');
 };
 
+/**
+ * Add the .targeted class to the commits indiciated by the targetStr
+ *
+ * @param {string} targetStr The target string (e.g. "8e0449d" or "head")
+ * @return void
+ */
+function highlightCommits(targetStr) {
+  const commitDomObjs = document.querySelectorAll(
+    targetStrToSelector(targetStr)
+  );
+  commitDomObjs.forEach(
+    (domObj) => {
+      domObj.classList.add('targeted');
+    }
+  );
+}
+
 function update() {
+  highlightCommits(
+    document.getElementById('git-target').value.toLowerCase()
+  );
 }
 
 function testTargetStrToCommits() {
