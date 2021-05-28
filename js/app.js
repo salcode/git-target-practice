@@ -81,6 +81,20 @@ const targetStrToCommits = (targetStr) => {
   return [targetStr];
 }
 
+/**
+ * Convert target string to CSS selector for relevant commits.
+ *
+ * @param {string} Target string (e.g. "8e0449d" or "head")
+ * @return {string} CSS selector for relevant commits (e.g.
+ *   "[data-hash='8e0449d'],[data-hash]='b4f815a']" )
+ */
+const targetStrToSelector = (targetStr) => {
+  const commits = targetStrToCommits(targetStr);
+  return commits.map(
+    (commit) => `[data-hash='${commit}']`
+  ).join(',');
+};
+
 function update() {
 }
 
