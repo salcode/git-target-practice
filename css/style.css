@@ -11,3 +11,7 @@ pre {
     text-align: left;
     max-width: 80em;
 }
+
+.targeted {
+  background-color: yellow;
+}
